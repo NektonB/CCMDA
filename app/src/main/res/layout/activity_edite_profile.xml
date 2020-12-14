@@ -7,6 +7,38 @@
     tools:context=".EditProfile">
 
 
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="411dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|top"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <EditText
+            android:layout_width="313dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/custom_input"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Post"
+            android:inputType="textPersonName"
+            android:paddingStart="12dp"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="226dp"
@@ -63,6 +95,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -81,7 +114,7 @@
             android:background="@drawable/custom_input"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="first name"
+            android:hint="Contact Number"
             android:inputType="textPersonName"
             android:paddingStart="12dp"
             android:textSize="15dp" />
@@ -97,10 +130,42 @@
             android:background="@drawable/custom_input"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="second name"
+            android:hint="NIC Number"
             android:inputType="textPersonName"
             android:paddingStart="12dp"
             android:textSize="15dp" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center|top"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <EditText
+            android:layout_width="313dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/custom_input"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:hint="Address"
+            android:inputType="textPostalAddress"
+            android:paddingStart="12dp"
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="10dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
