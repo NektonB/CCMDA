@@ -10,7 +10,7 @@ class SignUp : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val button = findViewById<Button>(R.id.signupButton)
+        val button = findViewById<Button>(R.id.medcenterButton)
         button.setOnClickListener {
             val intent = Intent(this, EditProfile::class.java)
             startActivity(intent)

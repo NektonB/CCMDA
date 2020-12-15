@@ -90,7 +90,7 @@
             android:textSize="15dp" />
 
         <Button
-            android:id="@+id/signupButton"
+            android:id="@+id/medcenterButton"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_below="@+id/txtConfirmPassword"

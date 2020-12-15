@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class secondActivity : AppCompatActivity() {
+class medicalCenter : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_medical_center)
 
-
-        val button = findViewById<Button>(R.id.coorButton)
+        val button = findViewById<Button>(R.id.medcenterButton)
         button.setOnClickListener {
-            val intent = Intent(this, medicalCenter::class.java)
+            val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
         }
     }
