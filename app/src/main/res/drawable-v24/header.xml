@@ -4,8 +4,7 @@
         android:endColor="#A8C6D8"
         android:startColor="#57B9E6"
         android:type="linear" />
-    <corners android:topLeftRadius="25dp"
-        android:topRightRadius="25dp"
+    <corners
         android:bottomLeftRadius="25dp"
         android:bottomRightRadius="25dp" />
 

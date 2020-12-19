@@ -17,7 +17,6 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -35,9 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@+id/profileImage"
             android:layout_toRightOf="@+id/profileImage"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
@@ -60,7 +57,7 @@
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="83dp"
+        android:layout_width="85dp"
         android:layout_height="83dp"
         android:background="@drawable/header"
         android:clickable="true"
@@ -98,6 +95,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout4"
         app:layout_constraintVertical_bias="0.01999998" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
