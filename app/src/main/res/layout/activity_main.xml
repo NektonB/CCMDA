@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@mipmap/ic_doctor_foreground" />
 
     <ImageView
         android:id="@+id/ivWave"
@@ -66,7 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivDoctor"
         app:layout_constraintVertical_bias="0.707"
-        app:srcCompat="@drawable/wave" />
+        app:srcCompat="@mipmap/ic_doctor_foreground" />
 
     <ImageView
         android:id="@+id/ivDoctor"
@@ -77,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ivWave"
-        app:srcCompat="@mipmap/doctor"
+        app:srcCompat="@mipmap/ic_doctor_foreground"
         tools:visibility="visible" />
 
     <Button
