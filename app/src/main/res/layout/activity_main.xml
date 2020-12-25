@@ -8,17 +8,6 @@
 
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="62dp"
-        android:layout_height="22dp"
-        android:text="so easy"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,10 +30,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="62dp"
+        android:layout_height="22dp"
+        android:text="so easy"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="413dp"
-        android:layout_height="264dp"
+        android:id="@+id/ivBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="484dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,29 +52,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@mipmap/ic_doctor_foreground" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="450dp"
-        android:layout_height="96dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:id="@+id/ivWave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/ivBackground"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/wave" />
+        app:layout_constraintTop_toBottomOf="@+id/ivDoctor"
+        app:layout_constraintVertical_bias="0.707"
+        app:srcCompat="@mipmap/ic_doctor_foreground" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="650dp"
+        android:id="@+id/ivDoctor"
+        android:layout_width="350dp"
         android:layout_height="350dp"
-        android:layout_marginEnd="68dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/ivBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541"
-        app:srcCompat="@mipmap/doctor" />
+        app:layout_constraintTop_toTopOf="@+id/ivWave"
+        app:srcCompat="@mipmap/ic_doctor_foreground"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/startButton"

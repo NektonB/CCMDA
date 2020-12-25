@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/doctor" />
+        app:srcCompat="@mipmap/ic_doctor_foreground" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
