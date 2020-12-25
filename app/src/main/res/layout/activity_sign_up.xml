@@ -95,7 +95,7 @@
             android:layout_marginTop="31dp"
             android:background="@drawable/signupbutton"
             android:text="Register"
-            android:textColor="#ffff"
+            android:textColor="#B12020"
             android:textSize="15dp" />
     </RelativeLayout>
 
