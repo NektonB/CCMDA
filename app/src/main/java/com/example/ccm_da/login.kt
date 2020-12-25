@@ -1,9 +1,9 @@
 package com.example.ccm_da
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 
 class login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

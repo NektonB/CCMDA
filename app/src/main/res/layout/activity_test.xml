@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    tools:context=".EditProfile"
     android:padding="0dp"
-    tools:context=".EditProfile">
+    android:background="#FFFFFF">
 
 
     <RelativeLayout
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/username"
             android:drawablePadding="10dp"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_baseline_local_phone_24"
             android:drawablePadding="10dp"
-            android:inputType="phone" />
+            android:inputType="phone"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/nicno"
             android:drawablePadding="10dp"
-            android:inputType="text" />
+            android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
