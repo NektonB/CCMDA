@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".SignUpActivity">
 
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/tvLoginAcc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login to Account"
+        android:text="@string/login_to_account"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,17 +22,17 @@
         app:layout_constraintVertical_bias="0.13999999" />
 
     <TextView
-        android:id="@+id/txt2"
+        android:id="@+id/tvLoginAcc_02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
-        android:text="Enter your email and passsowrd for log to account"
+        android:text="@string/tvLoginAcc_02"
         android:textAlignment="center"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt"
+        app:layout_constraintTop_toTopOf="@+id/tvLoginAcc"
         app:layout_constraintVertical_bias="0.0" />
 
     <RelativeLayout
@@ -42,57 +42,61 @@
         android:gravity="center"
         android:paddingHorizontal="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt2"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc_02"
         app:layout_constraintVertical_bias="0.13999999"
         tools:layout_editor_absoluteX="-28dp">
 
         <EditText
-            android:id="@+id/txtUsername"
+            android:id="@+id/etRegNumber"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:autofillHints=""
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/mail"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="Enter your email"
+            android:hint="@string/enter_your_email"
             android:inputType="textEmailAddress"
             android:paddingStart="12dp"
-            android:textSize="15dp" />
+            android:textSize="15sp"
+            tools:ignore="RtlSymmetry,TextFields" />
 
         <EditText
-            android:id="@+id/txtPassword"
+            android:id="@+id/etAddress"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/txtUsername"
+            android:layout_below="@+id/etRegNumber"
             android:layout_marginTop="20dp"
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/password"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="Enter your password"
+            android:autofillHints=""
             android:inputType="textPassword"
             android:paddingStart="12dp"
-            android:textSize="15dp" />
+            android:hint="@string/etAddress_Login"
+            android:textSize="15sp"
+            tools:ignore="RtlSymmetry" />
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_below="@+id/txtPassword"
+            android:layout_below="@+id/etAddress"
             android:layout_marginTop="31dp"
             android:background="@drawable/signupbutton"
-            android:text="LogIn"
+            android:text="@string/btnLogin_Login"
             android:textColor="#ffff"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/txt3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="If You haven't an account"
+        android:text="@string/tvLoginAcc_03"
         android:textAlignment="center"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,14 +104,14 @@
         app:layout_constraintVertical_bias="0.07999998" />
 
     <TextView
-        android:id="@+id/txtSignup"
+        android:id="@+id/etSingUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt3"
-        android:text="SignUp"
+        android:text="@string/etSingUp_Login"
         android:textAlignment="center"
         android:textColor="#1963D3"
-        android:textSize="17dp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

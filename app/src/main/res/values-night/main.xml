@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="doctor_appoints">Doctor Appoints</string>
+    <string name="so_easy">So Easy</string>
+    <string name="get_start">Get Start</string>
+    <string name="view_doctor_appoiments">View Doctor Appoiments</string>
+    <string name="doctor_image">Doctor Image</string>
+</resources>

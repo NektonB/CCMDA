@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="register_account">Register Account</string>
+    <string name="complete_your_details_to_countinue">Complete your details to countinue</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="conform_your_password">Conform your password</string>
+    <string name="register">Register</string>
+    <string name="if_you_have_already_account">If you have already account</string>
+</resources>

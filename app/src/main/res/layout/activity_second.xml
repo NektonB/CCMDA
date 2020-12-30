@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".secondActivity">
+    tools:context=".SecondActivity">
 
     <TextView
         android:id="@+id/textView5"
@@ -44,7 +44,7 @@
         app:srcCompat="@drawable/coordiator" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnDoctor"
         android:layout_width="223dp"
         android:layout_height="57dp"
         android:background="@drawable/signupbutton"
@@ -57,7 +57,7 @@
         android:textColor="@color/white"/>
 
     <Button
-        android:id="@+id/coorButton"
+        android:id="@+id/btnCoordinator"
         android:layout_width="223dp"
         android:layout_height="57dp"
         android:background="@drawable/signupbutton"

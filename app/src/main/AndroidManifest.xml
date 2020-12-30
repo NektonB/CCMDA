@@ -11,18 +11,18 @@
         android:theme="@style/Theme.CCMDA">
         <activity android:name=".OTP"></activity>
         <activity android:name=".test" />
-        <activity android:name=".login" />
+        <activity android:name=".LoginActivity" />
         <activity
-            android:name=".medicalCenter"
+            android:name=".MedicalCenterReg"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".secondActivity"
+            android:name=".SecondActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".EditProfile"
+            android:name=".EditProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SignUp"
+            android:name=".SignUpActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".MainActivity"

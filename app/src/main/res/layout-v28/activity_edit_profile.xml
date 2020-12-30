@@ -17,6 +17,7 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -27,6 +28,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerVertical="true"
+            android:contentDescription="TODO"
             app:srcCompat="@mipmap/profile" />
 
         <TextView
@@ -34,7 +36,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/profileImage"
             android:layout_toRightOf="@+id/profileImage"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
@@ -57,7 +61,7 @@
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="85dp"
+        android:layout_width="83dp"
         android:layout_height="83dp"
         android:background="@drawable/header"
         android:clickable="true"
@@ -87,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Edit Profile"
+        android:text="@string/edit_profile"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +99,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout4"
         app:layout_constraintVertical_bias="0.01999998" />
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
@@ -140,7 +143,7 @@
         android:id="@+id/textInputLayout7"
         android:layout_width="350dp"
         android:layout_height="69dp"
-        android:hint="NIC Number"
+        android:hint="@string/nic_number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,7 +153,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/nicno"
+            android:drawableStart="@drawable/nicno"
             android:drawablePadding="10dp"
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -159,7 +162,7 @@
         android:id="@+id/textInputLayout8"
         android:layout_width="350dp"
         android:layout_height="69dp"
-        android:hint="Address"
+        android:hint="@string/address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -169,7 +172,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/location"
+            android:drawableStart="@drawable/location"
             android:drawablePadding="10dp"
             android:inputType="textPostalAddress" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -179,9 +182,9 @@
         android:layout_width="216dp"
         android:layout_height="62dp"
         android:background="@drawable/signupbutton"
-        android:text="Finish"
+        android:text="@string/finish"
         android:textColor="#ffff"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

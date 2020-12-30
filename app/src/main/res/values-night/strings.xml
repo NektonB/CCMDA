@@ -1,11 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CCM-DA</string>
+
     <string name="login_to_account">Login to Account</string>
     <string name="enter_your_email">Enter your email</string>
-    <string name="tvLoginAcc_02">Enter your email and password for log to account</string>
+    <string name="tvLoginAcc_02">Enter your email and passsowrd for log to account</string>
     <string name="etAddress_Login">Enter your password</string>
     <string name="btnLogin_Login">LogIn</string>
-    <string name="tvLoginAcc_03">If You have not an account</string>
+    <string name="tvLoginAcc_03">If You haven\'t an account</string>
     <string name="etSingUp_Login">SignUp</string>
+    <string name="tv_01_main">Doctor Appoinment</string>
+    <string name="tv_02_main">View Doctor Appoinments</string>
     <string name="login_now">Login Now</string>
 </resources>

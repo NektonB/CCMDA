@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditProfile"
+    android:background="#FFFFFF"
     android:padding="0dp"
-    android:background="#FFFFFF">
+    tools:context=".EditProfileActivity">
 
 
     <RelativeLayout
@@ -28,6 +28,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerVertical="true"
+            android:contentDescription="@string/user_image"
             app:srcCompat="@mipmap/profile" />
 
         <TextView
@@ -36,14 +37,12 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
             android:layout_toEndOf="@+id/profileImage"
-            android:layout_toRightOf="@+id/profileImage"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
-            android:text="Sanjaya Sandaruwan"
+            android:text="@string/sanjaya_sandaruwan"
             android:textColor="@color/black"
-            android:textSize="23dp" />
+            android:textSize="23sp" />
 
         <TextView
             android:id="@+id/textView5"
@@ -51,12 +50,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView4"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/profileImage"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/profileImage"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
-            android:text="neuron specialist"
-            android:textSize="14dp" />
+            android:text="@string/neuron_specialist"
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
@@ -64,6 +63,7 @@
         android:layout_height="83dp"
         android:background="@drawable/header"
         android:clickable="true"
+        android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="300dp"
         app:cardElevation="20dp"
@@ -79,9 +79,10 @@
             android:layout_height="match_parent"
             android:background="@drawable/header"
             android:clickable="true"
+            android:contentDescription="@string/image_upload"
             android:contextClickable="true"
+            android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            android:outlineAmbientShadowColor="@color/white"
             android:src="@drawable/ic_baseline_cloud_upload_24" />
     </androidx.cardview.widget.CardView>
 
@@ -90,8 +91,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="Edit Profile"
-        android:textSize="25dp"
+        android:text="@string/edit_profile"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.087"
@@ -104,7 +105,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:hint="Full Name"
+        android:hint="@string/full_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,16 +115,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/username"
+            android:drawableStart="@drawable/username"
             android:drawablePadding="10dp"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout5"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="Contact Number"
+        android:hint="@string/contact_number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,16 +134,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+            android:drawableStart="@drawable/ic_baseline_local_phone_24"
             android:drawablePadding="10dp"
-            android:inputType="phone"/>
+            android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout7"
         android:layout_width="350dp"
         android:layout_height="69dp"
-        android:hint="NIC Number"
+        android:hint="@string/nic_number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,16 +153,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/nicno"
+            android:drawableStart="@drawable/nicno"
             android:drawablePadding="10dp"
-            android:inputType="text"/>
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout8"
         android:layout_width="350dp"
         android:layout_height="69dp"
-        android:hint="Address"
+        android:hint="@string/address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -171,19 +172,19 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/location"
+            android:drawableStart="@drawable/location"
             android:drawablePadding="10dp"
             android:inputType="textPostalAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/btnStart"
         android:layout_width="216dp"
         android:layout_height="62dp"
         android:background="@drawable/signupbutton"
-        android:text="Finish"
+        android:text="@string/finish"
         android:textColor="#ffff"
-        android:textSize="15dp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

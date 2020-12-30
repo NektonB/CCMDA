@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".SignUpActivity">
 
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/tvLoginAcc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Register Account"
+        android:text="@string/register_account"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,15 +23,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt2"
+        android:id="@+id/tvLoginAcc_02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="complete youre details for continue"
+        android:text="@string/complete_your_details_to_countinue"
         android:textAlignment="center"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -42,61 +42,64 @@
         android:paddingHorizontal="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt2">
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc_02">
 
         <EditText
-            android:id="@+id/txtUsername"
+            android:id="@+id/etRegNumber"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/mail"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="Enter your email"
+            android:autofillHints=""
             android:inputType="textEmailAddress"
             android:paddingStart="12dp"
-            android:textSize="15dp" />
+            android:hint="@string/enter_your_email"
+            android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/txtPassword"
+            android:id="@+id/etAddress"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/txtUsername"
+            android:layout_below="@+id/etRegNumber"
             android:layout_marginTop="20dp"
+            android:autofillHints=""
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/password"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="Enter your password"
+            android:hint="@string/enter_your_password"
             android:inputType="textPassword"
             android:paddingStart="12dp"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/txtConfirmPassword"
+            android:id="@+id/etContact"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/txtPassword"
+            android:layout_below="@+id/etAddress"
             android:layout_marginTop="20dp"
+            android:autofillHints=""
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/passowrd2"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="Enter your password"
+            android:hint="@string/conform_your_password"
             android:inputType="textPassword"
             android:paddingStart="12dp"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
 
         <Button
-            android:id="@+id/signupButton"
+            android:id="@+id/btnSingUp"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_below="@+id/txtConfirmPassword"
+            android:layout_below="@+id/etContact"
             android:layout_marginTop="31dp"
             android:background="@drawable/signupbutton"
-            android:text="Register"
+            android:text="@string/register"
             android:textColor="#B12020"
-            android:textSize="15dp" />
+            android:textSize="15sp" />
     </RelativeLayout>
 
     <TextView
@@ -104,22 +107,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="If You have already account"
+        android:text="@string/if_you_have_already_account"
         android:textAlignment="center"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <TextView
-        android:id="@+id/txtLogin"
+        android:id="@+id/tvLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt3"
-        android:text="Login"
+        android:text="@string/login_now"
         android:textAlignment="center"
         android:textColor="#1963D3"
-        android:textSize="17dp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt3" />
