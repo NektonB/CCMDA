@@ -6,4 +6,6 @@
     <string name="conform_your_password">Conform your password</string>
     <string name="register">Register</string>
     <string name="if_you_have_already_account">If you have already account</string>
+    <string name="center_number">Center Number</string>
+    <string name="add_new">Add New</string>
 </resources>

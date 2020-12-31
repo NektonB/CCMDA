@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnAddCenter"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
@@ -44,18 +45,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc_02">
 
+        <RelativeLayout
+            android:id="@+id/rlCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etCenterNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:autofillHints=""
+                android:background="@drawable/custom_input"
+                android:drawableStart="@drawable/mail"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="@string/center_number"
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnRegCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/etCenterNumber"
+                android:gravity="center"
+                android:text="@string/add_new" />
+
+        </RelativeLayout>
+
         <EditText
             android:id="@+id/etRegNumber"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_below="@id/rlCenter"
+            android:layout_marginTop="20dp"
+            android:autofillHints=""
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/mail"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:autofillHints=""
+            android:hint="@string/enter_your_email"
             android:inputType="textEmailAddress"
             android:paddingStart="12dp"
-            android:hint="@string/enter_your_email"
             android:textSize="15sp" />
 
         <EditText
@@ -100,6 +132,7 @@
             android:text="@string/register"
             android:textColor="#B12020"
             android:textSize="15sp" />
+
     </RelativeLayout>
 
     <TextView

@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        dbListener = DatabaseConn.getDatabaseRef().addSnapshotListener { value, error ->
+        dbListener = DatabaseConn.getADStatusRef().addSnapshotListener { value, error ->
             if (error != null) {
                 Toast.makeText(this, "Error while loading", Toast.LENGTH_SHORT).show()
                 Log.d("MainActivity", error.toString())
@@ -31,12 +31,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStop() {
+        super.onStop()
+        dbListener?.remove()
+    }
+
     private fun initialize() {
         val btnStart = findViewById<Button>(R.id.btnStart)
 
         btnStart.setOnClickListener {
-            val iSecondActivity = Intent(this, SecondActivity::class.java)
-            startActivity(iSecondActivity)
+            val iLoginActivity = Intent(this, LoginActivity::class.java)
+            startActivity(iLoginActivity)
         }
     }
 }

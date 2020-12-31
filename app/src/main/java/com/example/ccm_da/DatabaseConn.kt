@@ -7,13 +7,27 @@ import com.google.firebase.ktx.Firebase
 
 object DatabaseConn {
     private val db = Firebase.firestore
-    private val dbRef: CollectionReference = db.collection("Notebook")
+    private val ad_statusRef: CollectionReference = db.collection("ad_status")
+    private val appointmentRef: CollectionReference = db.collection("appointment")
+    private val as_listRef: CollectionReference = db.collection("as_list")
+    private val asl_statusRef: CollectionReference = db.collection("asl_status")
+    private val available_slotRef: CollectionReference = db.collection("available_slot")
+    private val doctorRef: CollectionReference = db.collection("doctor")
+    private val employeeRef: CollectionReference = db.collection("employee")
+    private val employee_postRef: CollectionReference = db.collection("employee_post")
+    private val event_logRef: CollectionReference = db.collection("event_log")
+    private val patientRef: CollectionReference = db.collection("patient")
+    private val userRef: CollectionReference = db.collection("user")
+    private val user_typeRef: CollectionReference = db.collection("user_type")
+    private val centerRef: CollectionReference = db.collection("center")
 
     fun getDatabase(): FirebaseFirestore {
         return db
     }
 
-    fun getDatabaseRef(): CollectionReference {
-        return dbRef
+    fun getADStatusRef(): CollectionReference {
+        return ad_statusRef
     }
+
+
 }

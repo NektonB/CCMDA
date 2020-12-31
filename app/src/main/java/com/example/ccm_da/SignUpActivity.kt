@@ -18,6 +18,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun initialize() {
         val btnSingUp: Button = findViewById(R.id.btnSingUp)
         val tvLogin: TextView = findViewById(R.id.tvLogin)
+        val btnAddCenter: Button = findViewById(R.id.btnAddCenter)
 
         btnSingUp.setOnClickListener {
             val iEditProfile = Intent(this, EditProfileActivity::class.java)
@@ -28,5 +29,11 @@ class SignUpActivity : AppCompatActivity() {
             val iLogin = Intent(this, LoginActivity::class.java)
             startActivity(iLogin)
         }
+
+        btnAddCenter.setOnClickListener {
+            val iMedicalCenterReg = Intent(this, MedicalCenterReg::class.java)
+            startActivity(iMedicalCenterReg)
+        }
+
     }
 }
