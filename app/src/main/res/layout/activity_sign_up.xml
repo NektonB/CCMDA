@@ -67,7 +67,7 @@
             <Button
                 android:id="@+id/btnRegCenter"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="62dp"
                 android:layout_toRightOf="@id/etCenterNumber"
                 android:gravity="center"
                 android:text="@string/add_new" />
