@@ -1,4 +1,4 @@
-package com.example.ccm_da
+package com.example.ccm_da.db_conn
 
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -27,6 +27,10 @@ object DatabaseConn {
 
     fun getADStatusRef(): CollectionReference {
         return ad_statusRef
+    }
+
+    fun getUserRef(): CollectionReference {
+        return userRef
     }
 
 

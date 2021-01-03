@@ -75,7 +75,7 @@
         </RelativeLayout>
 
         <EditText
-            android:id="@+id/etRegNumber"
+            android:id="@+id/etUserName"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@id/rlCenter"
@@ -91,10 +91,10 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/etAddress"
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/etRegNumber"
+            android:layout_below="@+id/etUserName"
             android:layout_marginTop="20dp"
             android:autofillHints=""
             android:background="@drawable/custom_input"
@@ -107,10 +107,10 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/etContact"
+            android:id="@+id/etPasswordConform"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/etAddress"
+            android:layout_below="@+id/etPassword"
             android:layout_marginTop="20dp"
             android:autofillHints=""
             android:background="@drawable/custom_input"
@@ -126,7 +126,7 @@
             android:id="@+id/btnSingUp"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_below="@+id/etContact"
+            android:layout_below="@+id/etPasswordConform"
             android:layout_marginTop="31dp"
             android:background="@drawable/signupbutton"
             android:text="@string/register"
