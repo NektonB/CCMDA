@@ -18,7 +18,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun initialize() {
         val btnSingUp: Button = findViewById(R.id.btnSingUp)
         val tvLogin: TextView = findViewById(R.id.tvLogin)
-        val btnAddCenter: Button = findViewById(R.id.btnAddCenter)
+        val btnAddCenter: Button = findViewById(R.id.btnRegCenter)
 
         btnSingUp.setOnClickListener {
             val iEditProfile = Intent(this, EditProfileActivity::class.java)
