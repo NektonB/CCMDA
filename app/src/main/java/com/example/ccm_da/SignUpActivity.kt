@@ -9,7 +9,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ccm_da.db_conn.DatabaseConn
+import com.example.ccm_da.pojos.CUList
+import com.example.ccm_da.pojos.Center
 import com.example.ccm_da.pojos.User
+import com.google.firebase.firestore.ktx.toObject
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -26,12 +29,7 @@ class SignUpActivity : AppCompatActivity() {
         val btnAddCenter: Button = findViewById(R.id.btnRegCenter)
 
         btnSingUp.setOnClickListener {
-
-            val saveUser = saveUser()
-            if (saveUser) {
-                val iEditProfile = Intent(this, EditProfileActivity::class.java)
-                startActivity(iEditProfile)
-            }
+            checkCenterAvailability()
         }
 
         tvLogin.setOnClickListener {
@@ -46,8 +44,12 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
-    private fun saveUser(): Boolean {
-        var operation = false
+    private fun loadEditProfile() {
+        val iEditProfile = Intent(this, EditProfileActivity::class.java)
+        startActivity(iEditProfile)
+    }
+
+    private fun checkUserAvailability() {
         try {
             val centerNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
             val userName = findViewById<EditText>(R.id.etUserName).text.toString()
@@ -56,19 +58,124 @@ class SignUpActivity : AppCompatActivity() {
             var user: User = User()
             user.user_name = userName
             user.password = password
+            user.ads_id = "1"
 
-            DatabaseConn.getUserRef().document(userName).set(user).addOnSuccessListener {
-                Toast.makeText(this, "User Saved", Toast.LENGTH_SHORT).show()
-                operation = true
-            }.addOnFailureListener { it: Exception ->
-                Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
-                operation = false
+            val qUserCheck =
+                DatabaseConn.getCenterUserListRef().whereEqualTo("center_number", centerNumber)
+
+            qUserCheck.get().addOnSuccessListener { documents ->
+                var cuList = CUList()
+                if (documents.size() != 0) {
+
+                    for (document in documents) {
+
+                        cuList = document.toObject<CUList>()
+
+                        if (centerNumber == cuList.center_number && userName == cuList.user_name) {
+                            Toast.makeText(
+                                this,
+                                "You are already sing up.Please login.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            user.ut_id = "3"
+                        }
+                    }
+                } else {
+                    user.ut_id = "1"
+                    cuList.user_name = userName
+                    cuList.center_number = centerNumber
+                }
+
+                saveUser(user, cuList)
+            }.addOnFailureListener { it ->
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
             }
         } catch (e: Exception) {
             e.printStackTrace()
             Log.d(this.toString(), e.toString())
         }
-        Toast.makeText(this, "Operation : $operation", Toast.LENGTH_SHORT).show()
-        return operation
+    }
+
+    private fun checkCenterAvailability() {
+        try {
+            val regNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
+
+            val qCenterCheck =
+                DatabaseConn.getCenterRef().whereEqualTo("reg_number", regNumber)
+
+            qCenterCheck.get().addOnSuccessListener { documents ->
+                var center = Center()
+                if (documents.size() != 0) {
+
+                    for (document in documents) {
+
+                        center = document.toObject<Center>()
+
+                        if (regNumber == center.reg_number) {
+                            checkUserAvailability()
+                        }
+                    }
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Center Not Found.! Please add center first....",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+//                saveUser(user, cuList)
+            }.addOnFailureListener { it ->
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
+    }
+
+    private fun saveUser(user: User, cuList: CUList) {
+        try {
+            if (user.ut_id != "" && user.ut_id != null) {
+                DatabaseConn.getUserRef().document(user.user_name).set(user).addOnSuccessListener {
+                    Toast.makeText(this, "User saved !", Toast.LENGTH_SHORT).show()
+                    saveCUList(cuList)
+                    //loadEditProfile()
+                }.addOnFailureListener { it: Exception ->
+                    Toast.makeText(
+                        this,
+                        "User not saved. \nSomething went wrong",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
+    }
+
+    private fun saveCUList(cuList: CUList) {
+        try {
+            if ((cuList.user_name != "" && cuList.user_name != null) && (cuList.center_number != "" && cuList.center_number != null)) {
+                DatabaseConn.getCenterUserListRef()
+                    .document(cuList.center_number + "_" + cuList.user_name).set(cuList)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "User saved !", Toast.LENGTH_SHORT).show()
+                        //loadEditProfile()
+                    }.addOnFailureListener { it: Exception ->
+                        Toast.makeText(
+                            this,
+                            "User not saved. \nSomething went wrong",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+                    }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
     }
 }

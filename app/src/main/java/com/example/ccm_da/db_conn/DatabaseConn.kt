@@ -20,6 +20,7 @@ object DatabaseConn {
     private val userRef: CollectionReference = db.collection("user")
     private val user_typeRef: CollectionReference = db.collection("user_type")
     private val centerRef: CollectionReference = db.collection("center")
+    private val centerUserListRef: CollectionReference = db.collection("cu_list")
 
     fun getDatabase(): FirebaseFirestore {
         return db
@@ -31,6 +32,14 @@ object DatabaseConn {
 
     fun getUserRef(): CollectionReference {
         return userRef
+    }
+
+    fun getCenterUserListRef(): CollectionReference {
+        return centerUserListRef
+    }
+
+    fun getCenterRef(): CollectionReference {
+        return centerRef
     }
 
 
