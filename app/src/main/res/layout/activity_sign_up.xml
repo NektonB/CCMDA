@@ -167,10 +167,9 @@
 
     <TextView
         android:id="@+id/txt3"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
         android:text="@string/if_you_have_already_account"
         android:textAlignment="center"
         android:textSize="16sp"
@@ -190,8 +189,8 @@
         android:textColor="#1963D3"
         android:textSize="17sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="@+id/txt3"
+        app:layout_constraintStart_toStartOf="@+id/txt3"
         app:layout_constraintTop_toBottomOf="@+id/txt3" />
 
     <androidx.constraintlayout.widget.Guideline
