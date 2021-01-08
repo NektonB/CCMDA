@@ -23,19 +23,19 @@
 
 
         <ImageView
-            android:id="@+id/profileImage"
+            android:id="@+id/ivProfile"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerVertical="true"
             app:srcCompat="@mipmap/profile" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvEmployee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/profileImage"
+            android:layout_toRightOf="@+id/ivProfile"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
             android:text="Sanjaya Sandaruwan"
@@ -43,13 +43,13 @@
             android:textSize="23dp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvUserType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/tvEmployee"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/profileImage"
+            android:layout_toRightOf="@+id/ivProfile"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
             android:text="neuron specialist"
@@ -175,7 +175,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/brnFinish"
         android:layout_width="216dp"
         android:layout_height="62dp"
         android:background="@drawable/signupbutton"

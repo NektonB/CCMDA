@@ -7,156 +7,198 @@
     tools:context=".SignUpActivity">
 
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.02" />
+
     <TextView
         android:id="@+id/tvLoginAcc"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/register_account"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <TextView
         android:id="@+id/tvLoginAcc_02"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/complete_your_details_to_countinue"
         android:textAlignment="center"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/tvLoginAcc"
+        app:layout_constraintStart_toStartOf="@+id/tvLoginAcc"
         app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/etCenterNumber"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:paddingHorizontal="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc_02">
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/center_number"
+        android:inputType="textPersonName"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/etFullName"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegCenter"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc_02" />
 
-        <RelativeLayout
-            android:id="@+id/rlCenter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnRegCenter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/etCenterNumber"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/etCenterNumber"
+        app:srcCompat="@drawable/ic_baseline_add_business_24" />
 
-            <EditText
-                android:id="@+id/etCenterNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:autofillHints=""
-                android:background="@drawable/custom_input"
-                android:drawableStart="@drawable/mail"
-                android:drawablePadding="12dp"
-                android:ems="10"
-                android:hint="@string/center_number"
-                android:inputType="textEmailAddress"
-                android:paddingStart="12dp"
-                android:textSize="15sp" />
+    <EditText
+        android:id="@+id/etFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter your full name"
+        android:inputType="textEmailAddress"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/etUserName"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/etCenterNumber" />
 
-            <Button
-                android:id="@+id/btnRegCenter"
-                android:layout_width="wrap_content"
-                android:layout_height="62dp"
-                android:layout_marginLeft="100dp"
-                android:layout_toRightOf="@id/etCenterNumber"
-                android:gravity="center"
-                android:text="@string/add_new" />
+    <EditText
+        android:id="@+id/etUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Enter your username"
+        android:inputType="textEmailAddress"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/etFullName" />
 
-        </RelativeLayout>
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/enter_your_password"
+        android:inputType="textEmailAddress"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/etPasswordConform"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/etUserName" />
 
-        <EditText
-            android:id="@+id/etUserName"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@id/rlCenter"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/mail"
-            android:drawablePadding="12dp"
-            android:ems="10"
-            android:hint="@string/enter_your_email"
-            android:inputType="textEmailAddress"
-            android:paddingStart="12dp"
-            android:textSize="15sp" />
+    <EditText
+        android:id="@+id/etPasswordConform"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/conform_your_password"
+        android:inputType="textEmailAddress"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/etUserName"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/password"
-            android:drawablePadding="12dp"
-            android:ems="10"
-            android:hint="@string/enter_your_password"
-            android:inputType="textPassword"
-            android:paddingStart="12dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:id="@+id/etPasswordConform"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/etPassword"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/passowrd2"
-            android:drawablePadding="12dp"
-            android:ems="10"
-            android:hint="@string/conform_your_password"
-            android:inputType="textPassword"
-            android:paddingStart="12dp"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/btnSingUp"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_below="@+id/etPasswordConform"
-            android:layout_marginTop="31dp"
-            android:background="@drawable/signupbutton"
-            android:text="@string/register"
-            android:textColor="#B12020"
-            android:textSize="15sp" />
-
-    </RelativeLayout>
+    <Button
+        android:id="@+id/btnSingUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPasswordConform"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/signupbutton"
+        android:text="@string/register"
+        android:textColor="#B12020"
+        android:textSize="15sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
         android:id="@+id/txt3"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
         android:text="@string/if_you_have_already_account"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/btnSingUp"
+        app:layout_constraintStart_toStartOf="@+id/btnSingUp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSingUp" />
 
     <TextView
         android:id="@+id/tvLogin"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt3"
+        android:layout_marginTop="8dp"
         android:text="@string/login_now"
         android:textAlignment="center"
         android:textColor="#1963D3"
         android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/txt3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

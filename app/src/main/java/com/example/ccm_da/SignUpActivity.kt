@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ccm_da.db_conn.DatabaseConn
 import com.example.ccm_da.pojos.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.ktx.toObject
 
 class SignUpActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun initialize() {
         val btnSingUp: Button = findViewById(R.id.btnSingUp)
         val tvLogin: TextView = findViewById(R.id.tvLogin)
-        val btnAddCenter: Button = findViewById(R.id.btnRegCenter)
+        val btnAddCenter: FloatingActionButton = findViewById(R.id.btnRegCenter)
 
         btnSingUp.setOnClickListener {
             checkCenterAvailability()

@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
-        val btnStart = findViewById<Button>(R.id.btnStart)
+        val btnStart = findViewById<Button>(R.id.brnFinish)
 
         btnStart.setOnClickListener {
             val iLoginActivity = Intent(this, LoginActivity::class.java)

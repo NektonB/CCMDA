@@ -24,7 +24,7 @@
 
 
         <ImageView
-            android:id="@+id/profileImage"
+            android:id="@+id/ivProfile"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_centerVertical="true"
@@ -32,12 +32,12 @@
             app:srcCompat="@mipmap/profile" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvEmployee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/profileImage"
+            android:layout_toEndOf="@+id/ivProfile"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
             android:text="@string/employee_full_name"
@@ -45,13 +45,13 @@
             android:textSize="23sp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvUserType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@+id/tvEmployee"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/profileImage"
+            android:layout_toEndOf="@+id/ivProfile"
             android:fontFamily="sans-serif-black"
             android:includeFontPadding="false"
             android:text="@string/user_type"
@@ -74,6 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout4">
 
         <ImageButton
+            android:id="@+id/ivUpload"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/header"
@@ -111,6 +112,7 @@
         app:layout_constraintVertical_bias="0.04">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/username"
@@ -130,6 +132,7 @@
         app:layout_constraintVertical_bias="0.01999998">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContactNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_local_phone_24"
@@ -149,6 +152,7 @@
         app:layout_constraintVertical_bias="0.01999998">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNIC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/nicno"
@@ -166,6 +170,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/location"
@@ -174,7 +179,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/brnFinish"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/signupbutton"
