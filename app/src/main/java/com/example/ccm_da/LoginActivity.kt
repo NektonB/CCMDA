@@ -16,8 +16,8 @@ class LoginActivity : AppCompatActivity() {
     private fun initialize() {
         val etSingUp = findViewById<TextView>(R.id.etSingUp)
         etSingUp.setOnClickListener {
-            val iSignUp = Intent(this, SignUpActivity::class.java)
-            startActivity(iSignUp)
+            val iChoosePerson = Intent(this, PersonChooseActivity::class.java)
+            startActivity(iChoosePerson)
         }
     }
 }

@@ -2,8 +2,8 @@
 <resources>
     <string name="user_image">User Image</string>
     <string name="image_upload">Image Upload</string>
-    <string name="sanjaya_sandaruwan">Sanjaya Sandaruwan</string>
-    <string name="neuron_specialist">Neuron Specialist</string>
+    <string name="employee_full_name">Sanjaya Sandaruwan</string>
+    <string name="user_type">Neuron Specialist</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="full_name">Full Name</string>
     <string name="contact_number">Contact Number</string>

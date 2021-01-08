@@ -9,17 +9,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ccm_da.db_conn.DatabaseConn
-import com.example.ccm_da.pojos.CUList
-import com.example.ccm_da.pojos.Center
-import com.example.ccm_da.pojos.User
+import com.example.ccm_da.pojos.*
 import com.google.firebase.firestore.ktx.toObject
 
 class SignUpActivity : AppCompatActivity() {
-
+    var person: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-
+        person = intent.extras?.get("PERSON").toString()
         initialize()
     }
 
@@ -47,54 +45,6 @@ class SignUpActivity : AppCompatActivity() {
     private fun loadEditProfile() {
         val iEditProfile = Intent(this, EditProfileActivity::class.java)
         startActivity(iEditProfile)
-    }
-
-    private fun checkUserAvailability() {
-        try {
-            val centerNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
-            val userName = findViewById<EditText>(R.id.etUserName).text.toString()
-            val password = findViewById<EditText>(R.id.etPassword).text.toString()
-
-            var user: User = User()
-            user.user_name = userName
-            user.password = password
-            user.ads_id = "1"
-
-            val qUserCheck =
-                DatabaseConn.getCenterUserListRef().whereEqualTo("center_number", centerNumber)
-
-            qUserCheck.get().addOnSuccessListener { documents ->
-                var cuList = CUList()
-                if (documents.size() != 0) {
-
-                    for (document in documents) {
-
-                        cuList = document.toObject<CUList>()
-
-                        if (centerNumber == cuList.center_number && userName == cuList.user_name) {
-                            Toast.makeText(
-                                this,
-                                "You are already sing up.Please login.",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } else {
-                            user.ut_id = "3"
-                        }
-                    }
-                } else {
-                    user.ut_id = "1"
-                    cuList.user_name = userName
-                    cuList.center_number = centerNumber
-                }
-
-                saveUser(user, cuList)
-            }.addOnFailureListener { it ->
-                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-            Log.d(this.toString(), e.toString())
-        }
     }
 
     private fun checkCenterAvailability() {
@@ -134,13 +84,86 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
+    private fun checkUserAvailability() {
+        try {
+            val centerNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
+            val userName = findViewById<EditText>(R.id.etUserName).text.toString()
+            val password = findViewById<EditText>(R.id.etPassword).text.toString()
+
+            var user: User = User()
+            user.user_name = userName
+            user.password = password
+            user.ads_id = "1"
+
+            val qUserCheck =
+                DatabaseConn.getCenterUserRef().whereEqualTo("center_number", centerNumber)
+
+            qUserCheck.get().addOnSuccessListener { documents ->
+                var cuList = CUList()
+                if (documents.size() != 0) {
+
+                    for (document in documents) {
+
+                        cuList = document.toObject<CUList>()
+
+                        if (centerNumber == cuList.center_number && userName == cuList.user_name) {
+                            Toast.makeText(
+                                this,
+                                "You are already sing up.Please login.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            if (person == "COORDINATOR") {
+                                user.ut_id = "3"
+                            } else if (person == "DOCTOR") {
+                                user.ut_id = "5"
+                            }
+                            cuList.user_name = userName
+                        }
+                    }
+                } else {
+                    user.ut_id = "1"
+                    cuList.user_name = userName
+                    cuList.center_number = centerNumber
+                }
+
+                saveUser(user, cuList)
+            }.addOnFailureListener { it ->
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
+    }
+
     private fun saveUser(user: User, cuList: CUList) {
         try {
             if (user.ut_id != "" && user.ut_id != null) {
                 DatabaseConn.getUserRef().document(user.user_name).set(user).addOnSuccessListener {
-                    Toast.makeText(this, "User saved !", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "User saved !", Toast.LENGTH_SHORT).show()
                     saveCUList(cuList)
-                    //loadEditProfile()
+
+                    Toast.makeText(this, "Enter User Save. ${user.ut_id} !", Toast.LENGTH_SHORT)
+                        .show()
+
+                    if (user.ut_id != "5" && user.ut_id != "4") {
+
+                        var ceList = CEList()
+                        ceList.center_number = cuList.center_number
+                        ceList.user_name = cuList.user_name
+                        saveCEList(ceList)
+
+                    } else if (user.ut_id == "5") {
+
+                        var cdList = CDList()
+                        cdList.center_number = cuList.center_number
+                        cdList.user_name = cuList.user_name
+                        saveCDList(cdList)
+
+                    } else if (user.ut_id == "4") {
+
+                    }
                 }.addOnFailureListener { it: Exception ->
                     Toast.makeText(
                         this,
@@ -159,11 +182,56 @@ class SignUpActivity : AppCompatActivity() {
     private fun saveCUList(cuList: CUList) {
         try {
             if ((cuList.user_name != "" && cuList.user_name != null) && (cuList.center_number != "" && cuList.center_number != null)) {
-                DatabaseConn.getCenterUserListRef()
+                DatabaseConn.getCenterUserRef()
                     .document(cuList.center_number + "_" + cuList.user_name).set(cuList)
                     .addOnSuccessListener {
-                        Toast.makeText(this, "User saved !", Toast.LENGTH_SHORT).show()
-                        //loadEditProfile()
+//                        Toast.makeText(this, "User saved !", Toast.LENGTH_SHORT).show()
+                    }.addOnFailureListener { it: Exception ->
+                        Toast.makeText(
+                            this,
+                            "User not saved. \nSomething went wrong",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+                    }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
+    }
+
+    private fun saveCEList(ceList: CEList) {
+        try {
+            if ((ceList.user_name != "" && ceList.user_name != null) && (ceList.center_number != "" && ceList.center_number != null)) {
+                DatabaseConn.getCenterEmployeeRef()
+                    .document(ceList.center_number + "_" + ceList.user_name).set(ceList)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "User saved to CE List !", Toast.LENGTH_SHORT).show()
+                        loadEditProfile()
+                    }.addOnFailureListener { it: Exception ->
+                        Toast.makeText(
+                            this,
+                            "User not saved. \nSomething went wrong",
+                            Toast.LENGTH_SHORT
+                        )
+                            .show()
+                    }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
+    }
+
+    private fun saveCDList(cdList: CDList) {
+        try {
+            if ((cdList.user_name != "" && cdList.user_name != null) && (cdList.center_number != "" && cdList.center_number != null)) {
+                DatabaseConn.getCenterDoctorRef()
+                    .document(cdList.center_number + "_" + cdList.user_name).set(cdList)
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "User saved to CD List !", Toast.LENGTH_SHORT).show()
+                        loadEditProfile()
                     }.addOnFailureListener { it: Exception ->
                         Toast.makeText(
                             this,

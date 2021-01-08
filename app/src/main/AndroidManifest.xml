@@ -16,7 +16,7 @@
             android:name=".MedicalCenterReg"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".PersonChooseActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".EditProfileActivity"
