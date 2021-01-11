@@ -4,8 +4,11 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
 
 object DatabaseConn {
+
     private val db = Firebase.firestore
     private val ad_statusRef: CollectionReference = db.collection("ad_status")
     private val appointmentRef: CollectionReference = db.collection("appointment")
@@ -24,6 +27,9 @@ object DatabaseConn {
     private val centerEmployeeRef: CollectionReference = db.collection("center_employees")
     private val centerDoctorRef: CollectionReference = db.collection("center_doctors")
     private val centerPatientRef: CollectionReference = db.collection("center_patients")
+
+    private val storage = Firebase.storage
+    private val profilePictureRef: StorageReference = storage.reference.child("profile_image")
 
     fun getDatabase(): FirebaseFirestore {
         return db
@@ -57,5 +63,9 @@ object DatabaseConn {
         return centerPatientRef
     }
 
+
+    fun getProfilePictureRef(): StorageReference {
+        return profilePictureRef
+    }
 
 }

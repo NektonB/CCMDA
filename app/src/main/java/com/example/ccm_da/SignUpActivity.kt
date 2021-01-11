@@ -15,6 +15,9 @@ import com.google.firebase.firestore.ktx.toObject
 
 class SignUpActivity : AppCompatActivity() {
     var person: String = ""
+    var fullName: String = ""
+    var userType: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -44,8 +47,12 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun loadEditProfile() {
-        val iEditProfile = Intent(this, EditProfileActivity::class.java)
-        startActivity(iEditProfile)
+        val iEmployeeProfile = Intent(this, EmployeeProfileActivity::class.java)
+
+        iEmployeeProfile.putExtra("FN", fullName)
+        iEmployeeProfile.putExtra("UT", userType)
+
+        startActivity(iEmployeeProfile)
     }
 
     private fun checkCenterAvailability() {
@@ -90,6 +97,8 @@ class SignUpActivity : AppCompatActivity() {
             val centerNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
             val userName = findViewById<EditText>(R.id.etRegNumber).text.toString()
             val password = findViewById<EditText>(R.id.etAddress).text.toString()
+            fullName = findViewById<EditText>(R.id.etFullName).text.toString()
+
 
             var user: User = User()
             user.user_name = userName
@@ -116,14 +125,17 @@ class SignUpActivity : AppCompatActivity() {
                         } else {
                             if (person == "COORDINATOR") {
                                 user.ut_id = "3"
+                                userType = "Guest"
                             } else if (person == "DOCTOR") {
                                 user.ut_id = "5"
+                                userType = "Doctor"
                             }
                             cuList.user_name = userName
                         }
                     }
                 } else {
                     user.ut_id = "1"
+                    userType = "Admin"
                     cuList.user_name = userName
                     cuList.center_number = centerNumber
                 }
@@ -142,11 +154,11 @@ class SignUpActivity : AppCompatActivity() {
         try {
             if (user.ut_id != "" && user.ut_id != null) {
                 DatabaseConn.getUserRef().document(user.user_name).set(user).addOnSuccessListener {
-                    //Toast.makeText(this, "User saved !", Toast.LENGTH_SHORT).show()
+
                     saveCUList(cuList)
 
-                    Toast.makeText(this, "Enter User Save. ${user.ut_id} !", Toast.LENGTH_SHORT)
-                        .show()
+                    /*Toast.makeText(this, "Enter User Save. ${user.ut_id} !", Toast.LENGTH_SHORT)
+                        .show()*/
 
                     if (user.ut_id != "5" && user.ut_id != "4") {
 
@@ -232,7 +244,7 @@ class SignUpActivity : AppCompatActivity() {
                     .document(cdList.center_number + "_" + cdList.user_name).set(cdList)
                     .addOnSuccessListener {
                         Toast.makeText(this, "User saved to CD List !", Toast.LENGTH_SHORT).show()
-                        loadEditProfile()
+                        //loadEditProfile()
                     }.addOnFailureListener { it: Exception ->
                         Toast.makeText(
                             this,
