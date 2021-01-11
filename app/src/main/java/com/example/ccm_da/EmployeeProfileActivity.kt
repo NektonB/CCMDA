@@ -8,8 +8,12 @@ import android.net.Uri
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ccm_da.db_conn.DatabaseConn
+import java.io.File
+import java.io.FileInputStream
 
 class EmployeeProfileActivity : AppCompatActivity() {
 
@@ -41,6 +45,8 @@ class EmployeeProfileActivity : AppCompatActivity() {
 
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             ivProfile.setImageURI(data?.data)
+            uploadProfileImage(data?.data.toString())
+            //Toast.makeText(this, data?.data?.toString(), Toast.LENGTH_LONG).show()
         }
     }
 
@@ -64,22 +70,26 @@ class EmployeeProfileActivity : AppCompatActivity() {
 
     private fun selectUserImage() {
         ivUpload.setOnClickListener {
-
-            if (VERSION.SDK_INT >= VERSION_CODES.M) {
-                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
-                    PackageManager.PERMISSION_DENIED
-                ) {
-                    //permission denied
-                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-                    //show popup to request runtime permission
-                    requestPermissions(permissions, PERMISSION_CODE)
+            try {
+                if (VERSION.SDK_INT >= VERSION_CODES.M) {
+                    if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
+                        PackageManager.PERMISSION_DENIED
+                    ) {
+                        //permission denied
+                        val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        //show popup to request runtime permission
+                        requestPermissions(permissions, PERMISSION_CODE)
+                    } else {
+                        //permission already granted
+                        pickImageFromGallery()
+                    }
                 } else {
-                    //permission already granted
+                    //system OS is < Marshmallow
                     pickImageFromGallery()
                 }
-            } else {
-                //system OS is < Marshmallow
-                pickImageFromGallery()
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Log.d(this.toString(), e.toString())
             }
         }
     }
@@ -116,6 +126,21 @@ class EmployeeProfileActivity : AppCompatActivity() {
                     Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+    private fun uploadProfileImage(imagePath: String) {
+        try {
+            val stream = FileInputStream(File(imagePath))
+            DatabaseConn.getProfilePictureRef().child("employee/").putStream(stream)
+                .addOnFailureListener { it ->
+                    Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+                }.addOnSuccessListener {
+                    Toast.makeText(this, "Uploaded", Toast.LENGTH_LONG).show()
+                }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
         }
     }
 }
