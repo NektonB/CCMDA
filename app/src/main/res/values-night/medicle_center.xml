@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="register_your_medical_center">Register your medical center</string>
+    <string name="register_your_medical_center">Register Medical Center</string>
     <string name="registration_number">Registraion number</string>
     <string name="next">Next</string>
     <string name="hot_line_or_mobile">Hotline or Mobile</string>
