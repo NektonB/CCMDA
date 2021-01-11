@@ -15,7 +15,7 @@ class MedicalCenterReg : AppCompatActivity() {
 
 
     private fun initialize() {
-        val btnNext = findViewById<Button>(R.id.btnNext)
+        val btnNext = findViewById<Button>(R.id.btnSave)
         btnNext.setOnClickListener {
             val iSignUp = Intent(this, SignUpActivity::class.java)
             startActivity(iSignUp)

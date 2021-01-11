@@ -98,14 +98,14 @@
         android:hint="Enter your full name"
         android:inputType="textEmailAddress"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/etUserName"
+        app:layout_constraintBottom_toTopOf="@+id/etRegNumber"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/etCenterNumber" />
 
     <EditText
-        android:id="@+id/etUserName"
+        android:id="@+id/etRegNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -113,14 +113,14 @@
         android:hint="Enter your username"
         android:inputType="textEmailAddress"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/etPassword"
+        app:layout_constraintBottom_toTopOf="@+id/etAddress"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/etFullName" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -128,14 +128,14 @@
         android:hint="@string/enter_your_password"
         android:inputType="textEmailAddress"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/etPasswordConform"
+        app:layout_constraintBottom_toTopOf="@+id/etContactNumber"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/etRegNumber" />
 
     <EditText
-        android:id="@+id/etPasswordConform"
+        android:id="@+id/etContactNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -147,13 +147,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddress" />
 
     <Button
         android:id="@+id/btnSingUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etPasswordConform"
+        android:layout_below="@+id/etContactNumber"
         android:layout_marginTop="24dp"
         android:background="@drawable/signupbutton"
         android:text="@string/register"

@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc" />
 
     <EditText
-        android:id="@+id/etUserName"
+        android:id="@+id/etRegNumber"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:autofillHints=""
@@ -57,7 +57,7 @@
         tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etAddress"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -70,9 +70,9 @@
         android:inputType="textPassword"
         android:paddingStart="12dp"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/etUserName"
-        app:layout_constraintStart_toStartOf="@+id/etUserName"
-        app:layout_constraintTop_toBottomOf="@+id/etUserName"
+        app:layout_constraintEnd_toEndOf="@+id/etRegNumber"
+        app:layout_constraintStart_toStartOf="@+id/etRegNumber"
+        app:layout_constraintTop_toBottomOf="@+id/etRegNumber"
         tools:ignore="RtlSymmetry"
         tools:visibility="visible" />
 
@@ -85,9 +85,9 @@
         android:textColor="#ffff"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
-        app:layout_constraintEnd_toEndOf="@+id/etPassword"
-        app:layout_constraintStart_toStartOf="@+id/etPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:layout_constraintEnd_toEndOf="@+id/etAddress"
+        app:layout_constraintStart_toStartOf="@+id/etAddress"
+        app:layout_constraintTop_toBottomOf="@+id/etAddress"
         app:layout_constraintVertical_bias="0.35000002"
         tools:visibility="visible" />
 

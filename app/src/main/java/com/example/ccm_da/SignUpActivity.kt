@@ -88,8 +88,8 @@ class SignUpActivity : AppCompatActivity() {
     private fun checkUserAvailability() {
         try {
             val centerNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
-            val userName = findViewById<EditText>(R.id.etUserName).text.toString()
-            val password = findViewById<EditText>(R.id.etPassword).text.toString()
+            val userName = findViewById<EditText>(R.id.etRegNumber).text.toString()
+            val password = findViewById<EditText>(R.id.etAddress).text.toString()
 
             var user: User = User()
             user.user_name = userName

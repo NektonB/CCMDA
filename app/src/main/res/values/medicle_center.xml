@@ -2,7 +2,8 @@
 <resources>
     <string name="register_your_medical_center">Register Medical Center</string>
     <string name="registration_number">Registration number</string>
-    <string name="next">Next</string>
+    <string name="next">Save</string>
     <string name="hot_line_or_mobile">Hot line or Mobile</string>
     <string name="address">Address</string>
+    <string name="name">Name</string>
 </resources>
