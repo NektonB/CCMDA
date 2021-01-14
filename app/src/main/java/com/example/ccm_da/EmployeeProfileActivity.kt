@@ -4,10 +4,12 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.Cursor
 import android.net.Uri
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +31,7 @@ class EmployeeProfileActivity : AppCompatActivity() {
 
     private var fullName: String = ""
     private var userType: String = ""
+    private var userName: String = ""
     private val pickImage = 100
     private lateinit var imageUri: Uri
 
@@ -37,6 +40,7 @@ class EmployeeProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_employee_profile)
         fullName = intent.extras?.get("FN").toString()
         userType = intent.extras?.get("UT").toString()
+        userName = intent.extras?.get("UN").toString()
         initialize()
     }
 
@@ -45,7 +49,8 @@ class EmployeeProfileActivity : AppCompatActivity() {
 
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             ivProfile.setImageURI(data?.data)
-            uploadProfileImage(data?.data.toString())
+            uploadProfileImage(getRealPathFromURI(data!!.data!!))
+
             //Toast.makeText(this, data?.data?.toString(), Toast.LENGTH_LONG).show()
         }
     }
@@ -129,10 +134,17 @@ class EmployeeProfileActivity : AppCompatActivity() {
         }
     }
 
-    private fun uploadProfileImage(imagePath: String) {
+    private fun uploadProfileImage(imagePath: String?) {
         try {
+
+            val splitPath = imagePath?.split("/")
+            val splitType = splitPath?.get(splitPath.lastIndex)?.split(".")
+            Toast.makeText(this, splitType?.get(splitType.lastIndex), Toast.LENGTH_LONG).show()
+
+
             val stream = FileInputStream(File(imagePath))
-            DatabaseConn.getProfilePictureRef().child("employee/").putStream(stream)
+            DatabaseConn.getEmployeeProfilePictureRef()
+                .child(userName + "." + splitType?.get(splitType.lastIndex)).putStream(stream)
                 .addOnFailureListener { it ->
                     Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
                 }.addOnSuccessListener {
@@ -142,5 +154,19 @@ class EmployeeProfileActivity : AppCompatActivity() {
             e.printStackTrace()
             Log.d(this.toString(), e.toString())
         }
+    }
+
+    private fun getRealPathFromURI(contentURI: Uri): String? {
+        val result: String?
+        val cursor: Cursor? = contentResolver.query(contentURI, null, null, null, null)
+        if (cursor == null) { // Source is Dropbox or other similar local file path
+            result = contentURI.path
+        } else {
+            cursor.moveToFirst()
+            val idx: Int = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
+            result = cursor.getString(idx)
+            cursor.close()
+        }
+        return result
     }
 }

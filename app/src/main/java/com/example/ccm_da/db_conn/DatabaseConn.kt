@@ -29,7 +29,8 @@ object DatabaseConn {
     private val centerPatientRef: CollectionReference = db.collection("center_patients")
 
     private val storage = Firebase.storage
-    private val profilePictureRef: StorageReference = storage.reference.child("profile_image")
+    private val employeeProfilePictureRef: StorageReference =
+        storage.reference.child("profile_image/employee/")
 
     fun getDatabase(): FirebaseFirestore {
         return db
@@ -64,8 +65,8 @@ object DatabaseConn {
     }
 
 
-    fun getProfilePictureRef(): StorageReference {
-        return profilePictureRef
+    fun getEmployeeProfilePictureRef(): StorageReference {
+        return employeeProfilePictureRef
     }
 
 }

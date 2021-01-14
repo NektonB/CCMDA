@@ -17,6 +17,7 @@ class SignUpActivity : AppCompatActivity() {
     var person: String = ""
     var fullName: String = ""
     var userType: String = ""
+    var userName: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +52,7 @@ class SignUpActivity : AppCompatActivity() {
 
         iEmployeeProfile.putExtra("FN", fullName)
         iEmployeeProfile.putExtra("UT", userType)
+        iEmployeeProfile.putExtra("UN", userName)
 
         startActivity(iEmployeeProfile)
     }
@@ -104,6 +106,8 @@ class SignUpActivity : AppCompatActivity() {
             user.user_name = userName
             user.password = password
             user.ads_id = "1"
+
+            this.userName = userName
 
             val qUserCheck =
                 DatabaseConn.getCenterUserRef().whereEqualTo("center_number", centerNumber)
