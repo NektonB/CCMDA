@@ -8,7 +8,5 @@
     <string name="btnLogin_Login">LogIn</string>
     <string name="tvLoginAcc_03">If You haven\'t an account</string>
     <string name="etSingUp_Login">SignUp</string>
-    <string name="tv_01_main">Doctor Appoinment</string>
-    <string name="tv_02_main">View Doctor Appoinments</string>
     <string name="login_now">Login Now</string>
 </resources>
