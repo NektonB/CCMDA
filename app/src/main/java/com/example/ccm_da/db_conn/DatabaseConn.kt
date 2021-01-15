@@ -69,4 +69,8 @@ object DatabaseConn {
         return employeeProfilePictureRef
     }
 
+    fun getEmployeeRef(): CollectionReference {
+        return employeeRef
+    }
+
 }

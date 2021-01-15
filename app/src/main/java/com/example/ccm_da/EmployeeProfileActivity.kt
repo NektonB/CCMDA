@@ -14,6 +14,7 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ccm_da.db_conn.DatabaseConn
+import com.example.ccm_da.pojos.Employee
 import java.io.File
 import java.io.FileInputStream
 
@@ -71,6 +72,9 @@ class EmployeeProfileActivity : AppCompatActivity() {
         etFullName.setText(fullName)
 
         selectUserImage()
+        btnFinish.setOnClickListener {
+            saveEmployee()
+        }
     }
 
     private fun selectUserImage() {
@@ -168,5 +172,34 @@ class EmployeeProfileActivity : AppCompatActivity() {
             cursor.close()
         }
         return result
+    }
+
+    private fun saveEmployee() {
+        try {
+            var emp = Employee()
+            emp.full_name = etFullName.text.toString()
+            emp.nic_number = etNIC.text.toString()
+            emp.address = etAddress.text.toString()
+            emp.contact_number = etContactNumber.text.toString()
+            emp.user_id = userName
+            emp.ads_id = "1"
+
+            DatabaseConn.getEmployeeRef()
+                .document(emp.nic_number).set(emp)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Employee saved !", Toast.LENGTH_SHORT).show()
+                    //loadEditProfile()
+                }.addOnFailureListener { it: Exception ->
+                    Toast.makeText(
+                        this,
+                        "User not saved. \nSomething went wrong",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
     }
 }
