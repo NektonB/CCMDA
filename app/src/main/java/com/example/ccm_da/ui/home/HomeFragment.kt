@@ -1,4 +1,4 @@
-package com.example.ccm_da.pojos.ui.home
+package com.example.ccm_da.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

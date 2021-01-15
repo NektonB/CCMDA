@@ -1,4 +1,4 @@
-package com.example.ccm_da.pojos.ui.slideshow
+package com.example.ccm_da.ui.slideshow
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
