@@ -11,7 +11,6 @@
         android:id="@+id/tvLoginAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="@string/login_to_account"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -21,7 +20,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/tvLoginAcc_02"
@@ -37,7 +36,9 @@
     <EditText
         android:id="@+id/etRegNumber"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/mail"
@@ -47,20 +48,20 @@
         android:inputType="textEmailAddress"
         android:paddingStart="12dp"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintBottom_toTopOf="@+id/guideline31"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toBottomOf="@+id/tvLoginAcc_02"
-        app:layout_constraintVertical_bias="0.19999999"
+        app:layout_constraintTop_toTopOf="@+id/guideline30"
         tools:ignore="RtlSymmetry,TextFields"
         tools:visibility="visible" />
 
     <EditText
         android:id="@+id/etAddress"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/password"
@@ -70,9 +71,11 @@
         android:inputType="textPassword"
         android:paddingStart="12dp"
         android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline32"
         app:layout_constraintEnd_toEndOf="@+id/etRegNumber"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etRegNumber"
-        app:layout_constraintTop_toBottomOf="@+id/etRegNumber"
+        app:layout_constraintTop_toTopOf="@+id/guideline31"
         tools:ignore="RtlSymmetry"
         tools:visibility="visible" />
 
@@ -87,8 +90,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
         app:layout_constraintEnd_toStartOf="@+id/guideline29"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toBottomOf="@+id/etAddress"
-        app:layout_constraintVertical_bias="0.35000002"
+        app:layout_constraintTop_toTopOf="@+id/guideline32"
         tools:visibility="visible" />
 
     <TextView
@@ -161,4 +163,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
 </androidx.constraintlayout.widget.ConstraintLayout>
