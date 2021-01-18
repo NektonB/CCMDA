@@ -14,7 +14,7 @@
         <activity
             android:name=".ADActivity"
             android:label="@string/title_activity_a_d"
-            android:theme="@style/Theme.CCMDA.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity android:name=".OTP" />
         <activity android:name=".LoginActivity" />
         <activity
@@ -34,7 +34,6 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -19,5 +19,11 @@ class LoginActivity : AppCompatActivity() {
             val iChoosePerson = Intent(this, PersonChooseActivity::class.java)
             startActivity(iChoosePerson)
         }
+
+        val btnlogin = findViewById<TextView>(R.id.btnLogin)
+        btnlogin.setOnClickListener {
+            val iChoosePerson = Intent(this, ADActivity::class.java)
+            startActivity(iChoosePerson)
+        }
     }
 }
