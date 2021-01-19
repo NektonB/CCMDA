@@ -23,6 +23,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var etEmail: EditText
     private lateinit var etPasswordConform: EditText
     private lateinit var etPassword: EditText
+    private lateinit var etRegNumber: EditText
 
     var person: String = ""
     var fullName: String = ""
@@ -43,6 +44,7 @@ class SignUpActivity : AppCompatActivity() {
         etEmail = findViewById(R.id.etEmail)
         etPasswordConform = findViewById(R.id.etPasswordConform)
         etPassword = findViewById(R.id.etPassword)
+        etRegNumber = findViewById(R.id.etRegNumber)
 
         btnSingUp.setOnClickListener {
             checkCenterAvailability()
@@ -79,6 +81,10 @@ class SignUpActivity : AppCompatActivity() {
             } else {
                 etPasswordConform.background = getDrawable(R.drawable.custom_input)
             }
+        }
+
+        etRegNumber.setOnFocusChangeListener { v, hasFocus ->
+            checkUserNameAvailability()
         }
 
     }
@@ -189,6 +195,49 @@ class SignUpActivity : AppCompatActivity() {
                 }
 
                 saveUser(user, cuList)
+            }.addOnFailureListener { it ->
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.d(this.toString(), e.toString())
+        }
+    }
+
+    private fun checkUserNameAvailability() {
+        try {
+            val centerNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
+            val userName = findViewById<EditText>(R.id.etRegNumber).text.toString()
+            //val password = findViewById<EditText>(R.id.etPassword).text.toString()
+            //fullName = findViewById<EditText>(R.id.etFullName).text.toString()
+
+
+            var user: User = User()
+            user.user_name = userName
+            //user.password = password
+            //user.ads_id = "1"
+
+            //this.userName = userName
+
+            val qUserCheck =
+                DatabaseConn.getCenterUserRef().whereEqualTo("center_number", centerNumber)
+
+            qUserCheck.get().addOnSuccessListener { documents ->
+                var cuList = CUList()
+                if (documents.size() != 0) {
+
+                    for (document in documents) {
+
+                        cuList = document.toObject<CUList>()
+
+                        if (centerNumber == cuList.center_number && userName == cuList.user_name) {
+                            etRegNumber.setText("")
+                            etRegNumber.background = getDrawable(R.drawable.edit_text_boader_red)
+                        }
+                    }
+                } else {
+                    etRegNumber.background = getDrawable(R.drawable.custom_input)
+                }
             }.addOnFailureListener { it ->
                 Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()
             }
