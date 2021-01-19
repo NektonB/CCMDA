@@ -57,7 +57,7 @@
         tools:visibility="visible" />
 
     <EditText
-        android:id="@+id/etAddress"
+        android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"

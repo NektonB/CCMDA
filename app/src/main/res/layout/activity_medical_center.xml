@@ -131,7 +131,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
     <EditText
-        android:id="@+id/etContactNumber"
+        android:id="@+id/etPasswordConform"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -151,7 +151,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline20" />
 
     <EditText
-        android:id="@+id/etAddress"
+        android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"

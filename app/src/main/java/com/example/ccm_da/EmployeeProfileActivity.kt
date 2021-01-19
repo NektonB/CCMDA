@@ -62,9 +62,9 @@ class EmployeeProfileActivity : AppCompatActivity() {
         ivUpload = findViewById(R.id.ivUpload)
         ivProfile = findViewById(R.id.ivProfile)
         etFullName = findViewById(R.id.etFullName)
-        etContactNumber = findViewById(R.id.etContactNumber)
+        etContactNumber = findViewById(R.id.etPasswordConform)
         etNIC = findViewById(R.id.etNIC)
-        etAddress = findViewById(R.id.etAddress)
+        etAddress = findViewById(R.id.etPassword)
         btnFinish = findViewById(R.id.brnFinish)
 
         tvEmployee.text = fullName

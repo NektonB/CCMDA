@@ -34,8 +34,8 @@ class MedicalCenterReg : AppCompatActivity() {
 
             val etRegNumber = findViewById<EditText>(R.id.etRegNumber)
             val etName = findViewById<EditText>(R.id.etName)
-            val etAddress = findViewById<EditText>(R.id.etAddress)
-            val etContactNumber = findViewById<EditText>(R.id.etContactNumber)
+            val etAddress = findViewById<EditText>(R.id.etPassword)
+            val etContactNumber = findViewById<EditText>(R.id.etPasswordConform)
 
             center.reg_number = etRegNumber.text.toString()
             center.name = etName.text.toString()

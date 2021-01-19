@@ -3,6 +3,7 @@ package com.example.ccm_da
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -13,7 +14,16 @@ import com.example.ccm_da.pojos.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.ktx.toObject
 
+
 class SignUpActivity : AppCompatActivity() {
+
+    private lateinit var btnSingUp: Button
+    private lateinit var tvLogin: TextView
+    private lateinit var btnAddCenter: FloatingActionButton
+    private lateinit var etEmail: EditText
+    private lateinit var etPasswordConform: EditText
+    private lateinit var etPassword: EditText
+
     var person: String = ""
     var fullName: String = ""
     var userType: String = ""
@@ -27,9 +37,12 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
-        val btnSingUp: Button = findViewById(R.id.btnSingUp)
-        val tvLogin: TextView = findViewById(R.id.tvLogin)
-        val btnAddCenter: FloatingActionButton = findViewById(R.id.btnRegCenter)
+        btnSingUp = findViewById(R.id.btnSingUp)
+        tvLogin = findViewById(R.id.tvLogin)
+        btnAddCenter = findViewById(R.id.btnRegCenter)
+        etEmail = findViewById(R.id.etEmail)
+        etPasswordConform = findViewById(R.id.etPasswordConform)
+        etPassword = findViewById(R.id.etPassword)
 
         btnSingUp.setOnClickListener {
             checkCenterAvailability()
@@ -45,6 +58,37 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(iMedicalCenterReg)
         }
 
+        etEmail.setOnFocusChangeListener { v, hasFocus ->
+
+            if (!hasFocus) {
+                val validEmail = isValidEmail(etEmail.text.toString())
+
+                if (!validEmail) {
+//                    etEmail.setText("")
+                    etEmail.background = getDrawable(R.drawable.edit_text_boader_red)
+                } else {
+                    etEmail.background = getDrawable(R.drawable.custom_input)
+                }
+            }
+        }
+
+        etPasswordConform.setOnFocusChangeListener { v, hasFocus ->
+            if (etPassword.text.toString() != etPasswordConform.text.toString()) {
+                etPasswordConform.setText("")
+                etPasswordConform.background = getDrawable(R.drawable.edit_text_boader_red)
+            } else {
+                etPasswordConform.background = getDrawable(R.drawable.custom_input)
+            }
+        }
+
+    }
+
+    private fun isValidEmail(target: String): Boolean {
+        return if (target.isEmpty()) {
+            false
+        } else {
+            Patterns.EMAIL_ADDRESS.matcher(target).matches()
+        }
     }
 
     private fun loadEditProfile() {
@@ -98,7 +142,7 @@ class SignUpActivity : AppCompatActivity() {
         try {
             val centerNumber = findViewById<EditText>(R.id.etCenterNumber).text.toString()
             val userName = findViewById<EditText>(R.id.etRegNumber).text.toString()
-            val password = findViewById<EditText>(R.id.etAddress).text.toString()
+            val password = findViewById<EditText>(R.id.etPassword).text.toString()
             fullName = findViewById<EditText>(R.id.etFullName).text.toString()
 
 
