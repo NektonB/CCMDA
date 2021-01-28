@@ -1,4 +1,4 @@
-package com.example.ccm_da.ui.gallery
+package com.example.ccm_da.ui.admin_user_manage
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ccm_da.R
 
-class GalleryFragment : Fragment() {
+class AdminUserManageFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var adminUserManageViewModel: AdminUserManageViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        adminUserManageViewModel =
+            ViewModelProvider(this).get(AdminUserManageViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_admin_user_manage, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        adminUserManageViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

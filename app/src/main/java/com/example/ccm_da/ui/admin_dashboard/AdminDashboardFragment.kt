@@ -1,29 +1,28 @@
-package com.example.ccm_da.ui.home
+package com.example.ccm_da.ui.admin_dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ccm_da.R
 
-class HomeFragment : Fragment() {
+class AdminDashboardFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var adminDashboardViewModel: AdminDashboardViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        adminDashboardViewModel =
+            ViewModelProvider(this).get(AdminDashboardViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_admin_dashboard, container, false)
 
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        adminDashboardViewModel.text.observe(viewLifecycleOwner, Observer {
 
         })
         return root
