@@ -10,7 +10,7 @@
             android:title="Dashboard" />
         <item
             android:id="@+id/nav_user_manage"
-            android:icon="@drawable/coordiator"
+            android:icon="@drawable/coordinator"
             android:title="User Manage" />
         <item
             android:id="@+id/nav_doctor_manage"

@@ -26,6 +26,6 @@
     <fragment
         android:id="@+id/nav_appointment_manage"
         android:name="com.example.ccm_da.ui.admin_appointment_manage.AdminAppointmentManage"
-        android:label="fragment_admin_appointment_manage"
+        android:label="@string/admin_appointment_manage"
         tools:layout="@layout/fragment_admin_appointment_manage" />
 </navigation>

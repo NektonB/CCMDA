@@ -8,17 +8,11 @@
     <string name="tvLoginAcc_03">If You have not an account</string>
     <string name="etSingUp_Login">SignUp</string>
     <string name="login_now">Login Now</string>
-    <string name="action_settings">Settings</string>
+
     <string name="title_activity_a_d">ADActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
 
     <string name="admin_dashboard">Dashboard</string>
     <string name="admin_user_mange">User Manage</string>
     <string name="admin_doctor_manage">Doctor Manage</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="admin_appointment_manage">Appointment Manage</string>
 </resources>
