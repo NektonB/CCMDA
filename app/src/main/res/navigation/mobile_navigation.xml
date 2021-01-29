@@ -3,27 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_dashboard">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_dashboard"
         android:name="com.example.ccm_da.ui.admin_dashboard.AdminDashboardFragment"
         android:label="@string/admin_dashboard"
         tools:layout="@layout/fragment_admin_dashboard" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_user_manage"
         android:name="com.example.ccm_da.ui.admin_user_manage.AdminUserManageFragment"
         android:label="@string/admin_user_mange"
         tools:layout="@layout/fragment_admin_user_manage" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_doctor_manage"
         android:name="com.example.ccm_da.ui.admin_doctor_mange.AdminDoctorManageFragment"
         android:label="@string/admin_doctor_manage"
         tools:layout="@layout/fragment_admin_doctor_manage" />
+
     <fragment
-        android:id="@+id/adminAppointmentManage"
+        android:id="@+id/nav_appointment_manage"
         android:name="com.example.ccm_da.ui.admin_appointment_manage.AdminAppointmentManage"
         android:label="fragment_admin_appointment_manage"
         tools:layout="@layout/fragment_admin_appointment_manage" />
