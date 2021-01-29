@@ -28,4 +28,9 @@
         android:name="com.example.ccm_da.ui.admin_appointment_manage.AdminAppointmentManage"
         android:label="@string/admin_appointment_manage"
         tools:layout="@layout/fragment_admin_appointment_manage" />
+    <fragment
+        android:id="@+id/nav_center_manage"
+        android:name="com.example.ccm_da.ui.admin_center_mange.CenterManageFragment"
+        android:label="@string/admin_center_manage"
+        tools:layout="@layout/fragment_center_manage" />
 </navigation>

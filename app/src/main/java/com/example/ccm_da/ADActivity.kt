@@ -32,7 +32,8 @@ class ADActivity : AppCompatActivity() {
                 R.id.nav_dashboard,
                 R.id.nav_user_manage,
                 R.id.nav_doctor_manage,
-                R.id.nav_appointment_manage
+                R.id.nav_appointment_manage,
+                R.id.nav_center_manage
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

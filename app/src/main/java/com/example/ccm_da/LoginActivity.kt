@@ -20,10 +20,10 @@ class LoginActivity : AppCompatActivity() {
             startActivity(iChoosePerson)
         }
 
-        val btnlogin = findViewById<TextView>(R.id.btnLogin)
-        btnlogin.setOnClickListener {
-            val iChoosePerson = Intent(this, ADActivity::class.java)
-            startActivity(iChoosePerson)
+        val btnLogin = findViewById<TextView>(R.id.btnLogin)
+        btnLogin.setOnClickListener {
+            val iAdminDashboard = Intent(this, ADActivity::class.java)
+            startActivity(iAdminDashboard)
         }
     }
 }

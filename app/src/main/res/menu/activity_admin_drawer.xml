@@ -10,15 +10,19 @@
             android:title="Dashboard" />
         <item
             android:id="@+id/nav_user_manage"
-            android:icon="@drawable/coordinator"
+            android:icon="@drawable/ic_nav_user"
             android:title="User Manage" />
         <item
             android:id="@+id/nav_doctor_manage"
-            android:icon="@drawable/doc1"
+            android:icon="@drawable/nav_doctor"
             android:title="Doctor Manage" />
         <item
             android:id="@+id/nav_appointment_manage"
-            android:icon="@drawable/ic_baseline_assignment_24"
+            android:icon="@drawable/ic__nav_appointment"
             android:title="Appointments Manage" />
+        <item
+            android:id="@+id/nav_center_manage"
+            android:icon="@drawable/ic_nav_medic_center"
+            android:title="Center Manage" />
     </group>
 </menu>
