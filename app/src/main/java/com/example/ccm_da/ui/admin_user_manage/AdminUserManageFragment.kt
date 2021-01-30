@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ccm_da.R
 
@@ -19,13 +18,16 @@ class AdminUserManageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         adminUserManageViewModel =
             ViewModelProvider(this).get(AdminUserManageViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_admin_user_manage, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        adminUserManageViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
+        textView.text = "Fuck It"
         return root
     }
+
+
 }
