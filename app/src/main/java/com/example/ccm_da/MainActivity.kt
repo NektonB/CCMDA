@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         initialize()
     }
 
@@ -43,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             val iLoginActivity = Intent(this, LoginActivity::class.java)
             startActivity(iLoginActivity)
+            /*Log.d("MainActivity", "Resource Id : " + R.drawable.doctor)
+            Toast.makeText(this, "Resource Id : " + R.drawable.doctor, Toast.LENGTH_LONG).show()*/
         }
     }
 }
