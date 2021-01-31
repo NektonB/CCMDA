@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.27" />
+            app:layout_constraintGuide_percent="0.3" />
 
         <TextView
             android:id="@+id/textView4"
@@ -55,8 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Name"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline57"
+            app:layout_constraintStart_toStartOf="@+id/guideline56"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <TextView
@@ -65,8 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="User Name"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline57"
+            app:layout_constraintStart_toStartOf="@+id/guideline56"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
@@ -75,32 +75,72 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="Type"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline57"
+            app:layout_constraintStart_toStartOf="@+id/guideline56"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="109dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="8dp"
-            android:text="Edit"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <Button
             android:id="@+id/delete"
-            android:layout_width="105dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/deletebutton"
+            android:text="Edit"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline61"
+            app:layout_constraintEnd_toStartOf="@+id/guideline60"
+            app:layout_constraintStart_toStartOf="@+id/guideline56"
+            app:layout_constraintTop_toTopOf="@+id/guideline58" />
+
+        <Button
+            android:id="@+id/delete3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/deletebutton"
             android:text="Delete"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox"
-            android:background="@drawable/deletebutton"/>
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline61"
+            app:layout_constraintEnd_toStartOf="@+id/guideline57"
+            app:layout_constraintStart_toStartOf="@+id/guideline60"
+            app:layout_constraintTop_toTopOf="@+id/guideline58" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.44" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline61"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
