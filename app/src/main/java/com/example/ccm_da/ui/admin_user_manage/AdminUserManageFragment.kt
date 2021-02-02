@@ -51,8 +51,8 @@ class AdminUserManageFragment : Fragment() {
         }
 
         val lmUser = GridLayoutManager(context, 2)
-        root.findViewById<RecyclerView>(R.id.rv_user).adapter = userAdapter
-        root.findViewById<RecyclerView>(R.id.rv_user).layoutManager = lmUser
+        root.findViewById<RecyclerView>(R.id.rv_doctor).adapter = userAdapter
+        root.findViewById<RecyclerView>(R.id.rv_doctor).layoutManager = lmUser
 
         return root
     }
